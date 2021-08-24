@@ -44,6 +44,15 @@ function () {
       }];
     }
   }, {
+    key: "getSum",
+    value: function getSum() {
+      var sum = 0;
+      this.goods.forEach(function (item) {
+        return sum += item.price;
+      });
+      console.log(sum);
+    }
+  }, {
     key: "render",
     value: function render() {
       var block = document.querySelector(this.container);
@@ -54,10 +63,8 @@ function () {
       try {
         for (var _iterator = this.goods[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
           var product = _step.value;
-
-          var _item = new ProductItem(product);
-
-          block.insertAdjacentHTML("beforeend", _item.render()); //           block.innerHTML += item.render();
+          var item = new ProductItem(product);
+          block.insertAdjacentHTML("beforeend", item.render()); //           block.innerHTML += item.render();
         }
       } catch (err) {
         _didIteratorError = true;
@@ -83,27 +90,63 @@ var ProductItem =
 /*#__PURE__*/
 function () {
   function ProductItem(product) {
-    var img = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'https://via.placeholder.com/200x150';
-
     _classCallCheck(this, ProductItem);
 
     this.title = product.title;
     this.id = product.id;
     this.price = product.price;
-    this.img = img;
+    this.img = product.img;
   }
 
   _createClass(ProductItem, [{
     key: "render",
     value: function render() {
-      return "<div class=\"product-item\">\n                <img src=\"img/".concat(item.img, "\">\n                <h3>").concat(this.title, "</h3>\n                <p>").concat(this.price, "</p>\n                <button>\u0412 \u043A\u043E\u0440\u0437\u0438\u043D\u0443</button>\n            </div>");
+      return "<div class=\"product-item\">\n                <img src=\"img/".concat(this.img, "\">\n                <h3>").concat(this.title, "</h3>\n                <p>").concat(this.price, " \u20BD</p>\n                <button>\u0412 \u043A\u043E\u0440\u0437\u0438\u043D\u0443</button>\n            </div>");
     }
   }]);
 
   return ProductItem;
 }();
 
+var Cart =
+/*#__PURE__*/
+function () {
+  function Cart() {
+    _classCallCheck(this, Cart);
+  }
+
+  _createClass(Cart, [{
+    key: "addGoods",
+    value: function addGoods() {}
+  }, {
+    key: "removeGoods",
+    value: function removeGoods() {}
+  }, {
+    key: "render",
+    value: function render() {}
+  }]);
+
+  return Cart;
+}();
+
+var CartItem =
+/*#__PURE__*/
+function () {
+  function CartItem() {
+    _classCallCheck(this, CartItem);
+  }
+
+  _createClass(CartItem, [{
+    key: "render",
+    value: function render() {}
+  }]);
+
+  return CartItem;
+}();
+
 var list = new ProductList();
+list.getSum(); //1 homework
+
 /* const goods = [
     { title: 'Shirt', price: 150, img: 'Shirt.jpg'},
     { title: 'Socks', price: 50, img: 'Socks.jpg'},

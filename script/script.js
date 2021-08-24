@@ -13,7 +13,13 @@ class ProductList{
             { title: 'Shoes', price: 250, img: 'Shoes.jpg'},
         ];
     }
-    
+
+    getSum(){
+        let sum = 0;
+        this.goods.forEach(item => sum += item.price);
+        console.log(sum);
+    }
+
     render(){
         const block = document.querySelector(this.container);
         for(let product of this.goods){
@@ -25,24 +31,42 @@ class ProductList{
 }
 
 class ProductItem{
-    constructor(product,img='https://via.placeholder.com/200x150'){
+    constructor(product){
         this.title = product.title;
         this.id = product.id;
         this.price = product.price;
-        this.img = img;
+        this.img = product.img;
     }
     render(){
            return `<div class="product-item">
-                <img src="img/${item.img}">
+                <img src="img/${this.img}">
                 <h3>${this.title}</h3>
-                <p>${this.price}</p>
+                <p>${this.price} ₽</p>
                 <button>В корзину</button>
             </div>`
     }
 }
 
-let list = new ProductList();
+class Cart{
+    addGoods(){
+    }
 
+    removeGoods(){
+    }
+
+    render(){
+    }
+}
+class CartItem{
+    render(){
+    }
+}
+
+let list = new ProductList();
+list.getSum()
+
+
+//1 homework
 /* const goods = [
     { title: 'Shirt', price: 150, img: 'Shirt.jpg'},
     { title: 'Socks', price: 50, img: 'Socks.jpg'},
