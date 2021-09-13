@@ -1,0 +1,73 @@
+@charset "UTF-8";
+/*ЦВЕТ*/
+/*ТЕКСТ*/
+/*КНОПКИ*/
+/*КНОПКИ ПРИ НАВЕДЕНИИ И НАЖАТИИ*/
+/*ЦЕНТРИРОВАНИЕ*/
+.intro {
+  background-color: #F1E4E6;
+  margin-bottom: 65px;
+}
+@media (max-width: 787px) {
+  .intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.intro__wrap {
+  height: calc(100vh - 75px);
+  background: url(../img/top.png) no-repeat;
+  background-size: contain;
+  background-position: 16px bottom;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+@media (max-width: 1195px) {
+  .intro__wrap {
+    background-position: 100px bottom;
+  }
+}
+@media (max-width: 787px) {
+  .intro__wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+    background: none;
+  }
+}
+.intro__text {
+  max-width: 450px;
+  border-left: 12px solid #F16D7F;
+  padding-left: 15px;
+  text-transform: uppercase;
+}
+.intro__text h1 {
+  /*Текст с другими параметрами*/
+  font-size: 30px;
+  line-height: 38px;
+  font-weight: 700;
+  color: #222222;
+  padding-left: 16px;
+}
+@media (max-width: 1195px) {
+  .intro__text h1 {
+    padding-right: 0px;
+  }
+}
+@media (max-width: 787px) {
+  .intro__text h1 {
+    padding-right: 0px;
+    margin-left: 0%;
+  }
+}
+.intro__text .font-size-h1 {
+  /*Текст с другими параметрами*/
+  font-size: 48px;
+  line-height: 58px;
+  font-weight: 900;
+  color: #222222;
+  display: block;
+}

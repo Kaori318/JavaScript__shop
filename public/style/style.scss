@@ -1,0 +1,313 @@
+@import "module/header";
+@import "module/intro";
+@import "module/color_font_mixin";
+@import "module/content";
+@import "module/Fetured_Items";
+@import "module/footer_top";
+@import "module/footer_bottom";
+@import "module/breadcrumbs";
+@import "module/filtet_menu";
+@import "module/pagination";
+@import "module/slider_and_collection";
+@import "module/card_cart";
+@import "module/registration";
+@import "module/card_box__card";
+
+$width: 1140px;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body {
+    font-family: Lato;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: $width;
+    margin: 0 auto;
+}
+
+.color-pink {
+    color: #F16D7F;
+}
+
+@media (max-width: 1195px) {
+    
+}
+
+@media (max-width: 787px) {
+    .container {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
+
+@media (max-width: 1195px) {
+    .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .loyalty {
+        margin-left: 22px;
+
+        h2,
+        p {
+            @include t16(300, $black);
+            padding-bottom: 22px;
+        }
+
+        ul {
+            @include t16(300, $black);
+        }
+
+        h2 {
+            padding-bottom: 32px;
+        }
+    }
+
+    .cart {
+        display: flex;
+        flex-direction: column;
+
+        &__card_box {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__card {
+            width: 735px;
+
+        }
+    }
+
+    .btn {
+        @include t14(300, $black);
+        border: 1px solid #A4A4A4;
+        padding: 17px 39px;
+        background-color: #fff;
+
+        &:hover {
+            background-color: #A4A4A4;
+            color: $white;
+        }
+
+        &-box {
+            width: 735px;
+        }
+    }
+
+    .cart__right {
+        margin-left: 0;
+        margin-top: 64px;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .shipping_adress {
+        width: 360px;
+    }
+
+    .sub_total {
+        min-width: 360px;
+        margin-top: 0;
+        text-align: right;
+        padding: 40px 43px;
+        background: #F5F3F3;
+        margin-bottom: 57px;
+
+        h3 {
+            @include t11 (400, $grey3);
+
+            span {
+                padding-left: 20px;
+            }
+        }
+
+        h2 {
+            @include t16 (300, $dark_grey);
+            padding-top: 12px;
+            padding-bottom: 21px;
+
+            span {
+                padding-left: 20px;
+                @include t16(700, $light_pink);
+            }
+        }
+
+        hr {
+            margin-bottom: 17px;
+            border-top: 1px solid #e2e2e2
+        }
+
+        button {
+            @include btn-p(15px 37px);
+            @include t16(200, $white);
+            cursor: pointer;
+            margin-bottom: 0;
+
+            &:hover {
+                box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.35);
+            }
+        }
+    }
+}
+@media (max-width:767px) {
+     .lin2 {
+       border: 1px solid #EAEAEA;
+       width: 175px;
+       text-align: center;
+   
+     }
+   
+     .registration_wrap {
+       display: flex;
+       justify-content: space-between;
+       flex-direction: column;
+     }
+   
+     .loyalty {
+       margin-top: 40px;
+       margin-left: 0;
+     }
+   
+     .cart {
+       display: flex;
+       flex-direction: column;
+      padding-top: 39px;
+      padding-bottom: 48px;
+
+   
+       &__card_box {
+         width: 100%;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+       }
+   
+       &__card {
+         width: 358px;
+         a {
+             padding: 17px 12px;
+             svg {
+                width: 12px;
+                height:18px;
+             }     
+         }
+       }
+       &__img {
+        height: 188px;
+    }
+       &__text {
+        padding-top: 13px;
+        padding-left: 17px;
+
+        h2 {
+            @include t16(400, $dark_grey);
+        }
+    }
+
+    &__list {
+        list-style: none;
+        padding-top: 25px;
+    }
+
+    &__link {
+        @include text(14px,17px,400,$grey2);
+        padding-bottom: 4px;
+        
+        input {
+            margin-left: 20px;
+            @include text(10px,12px,400, $grey);
+            width: 30px;
+            border: 1px solid #EAEAEA;
+            height: 15px;
+            text-align: center;
+        }
+    }
+     }
+   
+     .btn {
+       @include text(12px,14px,300,$black);
+       border: 1px solid #A4A4A4;
+       padding: 9px 25px;
+       background-color: #fff;
+       text-transform: lowercase;
+       ::first-letter{
+           text-transform: uppercase;
+       }
+   
+       &-box {
+         width: 360px;
+         margin-top: 0;
+       }
+     }
+   
+     .cart__right {
+       margin-left: 0;
+       margin-top: 64px;
+       display: flex;
+       flex-direction: column;
+       width: 100%;
+       justify-content: center;
+       align-items: center;
+     }
+   
+     .shipping_adress {
+       width: 360px;
+     }
+   
+     .sub_total {
+       min-width: 360px;
+       margin-top: 48px;
+       text-align: right;
+       padding: 40px 43px;
+       background: #F5F3F3;
+       margin-bottom: 57px;
+   
+       h3 {
+         @include t11 (400, $grey3);
+   
+         span {
+           padding-left: 20px;
+         }
+       }
+   
+       h2 {
+         @include t16 (300, $dark_grey);
+         padding-top: 12px;
+         padding-bottom: 21px;
+   
+         span {
+           padding-left: 20px;
+           @include t16(700, $light_pink);
+         }
+       }
+   
+       hr {
+         margin-bottom: 17px;
+         border-top: 1px solid #e2e2e2;
+       }
+   
+       button {
+         @include btn-p(15px 37px);
+         @include t16(200, $white);
+         cursor: pointer;
+         margin-bottom: 0;
+   
+         &:hover {
+           box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.35);
+         }
+       }
+     }
+   }

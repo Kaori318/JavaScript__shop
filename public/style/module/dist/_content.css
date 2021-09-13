@@ -1,0 +1,122 @@
+@charset "UTF-8";
+/*ЦВЕТ*/
+/*ТЕКСТ*/
+/*КНОПКИ*/
+/*КНОПКИ ПРИ НАВЕДЕНИИ И НАЖАТИИ*/
+/*ЦЕНТРИРОВАНИЕ*/
+.content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: 100%;
+}
+@media (max-width: 1195px) {
+  .content {
+    width: 768px;
+  }
+}
+@media (max-width: 767px) {
+  .content {
+    justify-content: center;
+    width: 100%;
+  }
+}
+.content__item {
+  width: 31.5%;
+  min-height: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 1195px) {
+  .content__item {
+    min-height: 168px;
+    margin-right: 0;
+  }
+  .content__item:nth-child(1), .content__item:nth-child(2) {
+    margin-right: 20px;
+  }
+}
+@media (max-width: 787px) {
+  .content__item {
+    min-height: 168px;
+    margin-right: 0;
+  }
+  .content__item:nth-child(1), .content__item:nth-child(2) {
+    margin-right: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .content__item {
+    min-height: 260px;
+    min-width: 344px;
+    width: 60%;
+    margin-bottom: 32px;
+  }
+  .content__item:nth-child(1), .content__item:nth-child(2) {
+    margin-right: 0px;
+  }
+}
+.content__item:last-child {
+  width: 100%;
+  min-height: 180px;
+  margin-top: 30px;
+}
+@media (max-width: 1195px) {
+  .content__item:last-child {
+    min-height: 116px;
+    margin-top: 20px;
+  }
+}
+@media (max-width: 787px) {
+  .content__item:last-child {
+    min-height: 116px;
+    min-width: 720px;
+    margin-top: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .content__item:last-child {
+    min-height: 116px;
+    width: 60%;
+    min-width: 344px;
+    margin: 0;
+  }
+}
+.content__img-1 {
+  background: linear-gradient(rgba(33, 22, 22, 0.7), rgba(33, 22, 22, 0.7)), url(../img/project_1.jpg) no-repeat;
+  background-size: 100% 100%;
+}
+.content__img-2 {
+  background: linear-gradient(rgba(33, 22, 22, 0.7), rgba(33, 22, 22, 0.7)), url(../img/project_2.jpg) no-repeat;
+  background-size: 100% 100%;
+}
+.content__img-3 {
+  background: linear-gradient(rgba(33, 22, 22, 0.7), rgba(33, 22, 22, 0.7)), url(../img/project_3.jpg) no-repeat;
+  background-size: 100% 100%;
+}
+.content__img-4 {
+  background: linear-gradient(rgba(33, 22, 22, 0.7), rgba(33, 22, 22, 0.7)), url(../img/project_4.jpg) no-repeat;
+  background-size: 100% 100%;
+}
+.content__text p {
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 400;
+  color: #FFFFFF;
+  width: 160px;
+  text-align: center;
+  transition-duration: 0.5s;
+  /*Скорость анимации*/
+}
+.content__text p:hover {
+  transform: scale(1.4);
+  /*Анимация увеличение*/
+}
+
+.font-size-color {
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: 700;
+  color: #F16D7F;
+}

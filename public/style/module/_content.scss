@@ -1,0 +1,107 @@
+@import "color_font_mixin";
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 100%;
+    @media (max-width: 1195px) {
+        width: 768px;
+    }
+    @media (max-width:767px) {
+        justify-content: center;
+    width: 100%;
+    }
+
+    &__item {
+        width: 31.5%;
+        min-height: 260px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @media (max-width: 1195px) {
+            min-height: 168px;
+            margin-right: 0;
+            &:nth-child(1),
+            &:nth-child(2) {
+                margin-right: 20px;
+            }
+        }
+        @media (max-width: 787px) {
+            min-height: 168px;
+            margin-right: 0;
+
+            &:nth-child(1),
+            &:nth-child(2) {
+                margin-right: 20px;
+            }
+        }
+        @media (max-width:767px) {
+            min-height: 260px;
+            min-width: 344px;
+            width: 60%;
+            margin-bottom: 32px;
+            &:nth-child(1),
+            &:nth-child(2) {
+              margin-right: 0px;
+            }
+        }
+        &:last-child {
+            width: 100%;
+            min-height: 180px;
+            margin-top: 30px;
+            @media (max-width: 1195px) {
+                min-height: 116px;
+                margin-top: 20px;
+            }
+            @media (max-width: 787px) {
+                min-height: 116px;
+                min-width: 720px;
+                margin-top: 20px;
+            }
+            @media (max-width:767px) {
+                min-height: 116px;
+                width: 60%;
+                min-width: 344px;
+                margin: 0;
+            }   
+        }
+    }
+
+    &__img-1 {
+        background: linear-gradient(rgba(33, 22, 22, 0.7), rgba(33, 22, 22, 0.7)), url(../img/project_1.jpg) no-repeat;
+        background-size: 100% 100%;
+    }
+
+    &__img-2 {
+        background: linear-gradient(rgba(33, 22, 22, 0.7), rgba(33, 22, 22, 0.7)), url(../img/project_2.jpg) no-repeat;
+        background-size: 100% 100%;
+    }
+
+    &__img-3 {
+        background: linear-gradient(rgba(33, 22, 22, 0.7), rgba(33, 22, 22, 0.7)), url(../img/project_3.jpg) no-repeat;
+        background-size: 100% 100%;
+    }
+
+    &__img-4 {
+        background: linear-gradient(rgba(33, 22, 22, 0.7), rgba(33, 22, 22, 0.7)), url(../img/project_4.jpg) no-repeat;
+        background-size: 100% 100%;
+    }
+
+    &__text p {
+        @include t16(400, $white);
+        width: 160px;
+        text-align: center;
+        transition-duration: 0.5s;
+
+        /*Скорость анимации*/
+        &:hover {
+            transform: scale(1.4);
+            /*Анимация увеличение*/
+        }
+    }
+}
+
+.font-size-color {
+    @include t24(700, $light_pink);
+}

@@ -1,0 +1,94 @@
+@import "color_font_mixin";
+
+.registration_wrap {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 64px;
+    padding-bottom: 96px;
+}
+
+.registration__name,
+.registration__gender,
+.registration__login {
+    border: 0;
+    padding-bottom: 33px;
+}
+
+.registration {
+    width: 360px;
+
+    &__name,
+    &__login {
+        legend {
+            @include t16(300, $dark_grey);
+        }
+
+        input {
+            border: 1px solid #A4A4A4;
+            padding: 13px 16px;
+            @include t13(300, $light_gray);
+            font-family: Lato;
+            margin-top: 20px;
+            width: 360px;
+        }
+
+        p {
+            @include t13(300, $light_gray);
+            padding-top: 15px;
+        }
+    }
+
+    &__gender {
+        @include t11(300, $black);
+
+        input {
+            border: 1px solid $light_gray;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        .gender {
+            padding-right: 20px;
+        }
+
+    }
+
+    &__button {
+        padding: 16px 29px;
+        @include t14(300, $white);
+        background: #F16D7F;
+        border: none;
+
+        &:hover {
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.35);
+        }
+
+        svg {
+            margin-left: 20px;
+        }
+
+    }
+}
+
+.loyalty {
+    max-width: 650px;
+
+    h2,
+    p {
+        @include t24(300, $black);
+        padding-bottom: 22px;
+    }
+
+    ul {
+        @include t24(300, $black);
+
+        &>li {
+            margin-bottom: 16px;
+
+            &::before {
+                content: url(../img/icons/check_mark.svg);
+                margin-right: 22px;
+            }
+        }
+    }
+}
