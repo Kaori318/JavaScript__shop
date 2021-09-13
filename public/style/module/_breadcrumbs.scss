@@ -1,0 +1,50 @@
+@import "color_font_mixin";
+
+
+.breadcrumbs {
+    background-color: #F8F3F4;
+    height: 148px;
+    display: flex;
+    align-items: center;
+
+    &__wrap {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        @media (max-width: 787px) {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+        }
+    }
+
+    &__list {
+        list-style: none;
+        display: flex;
+    }
+
+    &__link {
+        &:last-child a {
+            font-weight: 700;
+            color: #F16D7F;
+        }
+
+        a {
+            @include t14(300, $grey)
+        }
+
+        &:not(:last-child)::after {
+            content: '/';
+            color: #d5d5d5;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+    }
+
+    &__text {
+        @include t24(400, $light_pink);
+        @media (max-width: 787px) {
+        padding-bottom: 32px;
+        }
+    }
+}

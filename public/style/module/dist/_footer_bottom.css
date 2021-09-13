@@ -1,0 +1,149 @@
+@charset "UTF-8";
+/*ЦВЕТ*/
+/*ТЕКСТ*/
+/*КНОПКИ*/
+/*КНОПКИ ПРИ НАВЕДЕНИИ И НАЖАТИИ*/
+/*ЦЕНТРИРОВАНИЕ*/
+.bottom {
+  background-image: url(../img/photo_subscribe.jpg);
+  min-height: 448px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bottom__colump {
+  padding-top: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 1195px) {
+  .bottom__colump {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 140px;
+  }
+}
+.bottom__item {
+  width: 370px;
+  text-align: center;
+  vertical-align: middle;
+}
+@media (max-width: 1195px) {
+  .bottom__item {
+    width: 370px;
+    text-align: center;
+    padding-top: 60px;
+  }
+}
+.bottom__item img {
+  padding-bottom: 30px;
+}
+@media (max-width: 1195px) {
+  .bottom__item img {
+    padding-bottom: 30px;
+  }
+}
+.bottom__item p {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #222222;
+}
+.bottom__item .bold {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #222222;
+  display: block;
+}
+.bottom__item h3 {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 400;
+  color: #222222;
+  line-height: 30px;
+  padding-bottom: 32px;
+}
+
+.cursive {
+  font-style: italic;
+}
+
+.post__input {
+  border-radius: 20px 0 0 20px;
+  padding: 18px 22px;
+  background: #E1E1E1;
+  border: none;
+  width: 256px;
+}
+.post__input:focus {
+  outline: none !important;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.35);
+  background-color: #fff;
+}
+.post__input:hover {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.35);
+}
+.post__wrap {
+  display: flex;
+  width: 100%;
+}
+.post__button {
+  border-radius: 0 20px 20px 0;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 300;
+  color: #FFFFFF;
+  /*Розовая кнопка без рамки*/
+  padding: 18px 22px;
+  background-color: #F26376;
+  border: none;
+  display: inline-block;
+  cursor: pointer;
+}
+.post__button:hover {
+  background-color: #ee455c;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.35);
+}
+
+.All_Rights_Reserved {
+  background: #222222;
+}
+.All_Rights_Reserved__wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.All_Rights_Reserved__text {
+  padding: 30px 0 30px 0;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 400;
+  color: #FBFBFB;
+}
+
+.social {
+  display: flex;
+  padding-top: 24px;
+}
+.social__link {
+  text-decoration: none;
+  font-size: 30px;
+  background-color: #FFFFFF;
+  margin: 5px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social__link:not(:last-child) {
+  margin-right: 8px;
+}
+.social__link:hover {
+  background-color: #F16D7F;
+}
+.social__link:hover svg {
+  fill: #FFFFFF;
+}

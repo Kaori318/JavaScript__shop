@@ -1,0 +1,135 @@
+@charset "UTF-8";
+/*ЦВЕТ*/
+/*ТЕКСТ*/
+/*КНОПКИ*/
+/*КНОПКИ ПРИ НАВЕДЕНИИ И НАЖАТИИ*/
+/*ЦЕНТРИРОВАНИЕ*/
+.card-box {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.card-box__padding {
+  padding-bottom: 100px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+  background: #F8F8F8;
+  margin-bottom: 30px;
+  position: relative;
+  margin-right: 30px;
+}
+.card:nth-child(3n) {
+  margin-right: 0;
+}
+@media (max-width: 1195px) {
+  .card {
+    margin-right: 16px;
+    margin-bottom: 16px;
+  }
+  .card:nth-child(3n) {
+    margin-right: 16px;
+  }
+  .card:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+@media (max-width: 787px) {
+  .card {
+    margin-right: 16px;
+    margin-bottom: 16px;
+  }
+  .card:nth-child(3n) {
+    margin-right: 16px;
+  }
+  .card:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+@media (max-width: 767px) {
+  .card {
+    margin-right: 0;
+  }
+  .card:nth-child(2n) {
+    margin-right: 0;
+  }
+  .card:nth-child(3n) {
+    margin-right: 0px;
+  }
+}
+.card__text {
+  padding: 0 16px;
+  text-align: left;
+  flex-grow: 1;
+}
+.card__text h4 {
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #000000;
+  padding-top: 24px;
+  padding-bottom: 13px;
+}
+.card__text h4:hover {
+  text-decoration: underline;
+}
+.card__text p {
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 400;
+  color: #656565;
+  padding-bottom: 10px;
+}
+.card strong {
+  padding: 0 16px 16px;
+  text-align: left;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 400;
+  color: #F16D7F;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 420px;
+  background-color: rgba(58, 56, 56, 0.83);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: 0.5s;
+}
+.overlay__button {
+  background-color: transparent;
+  /*Проздачная с рамкой*/
+  padding: 12px 14px;
+  outline: 1px solid #FFFFFF;
+  border: none;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 400;
+  color: #FBFBFB;
+  transition-duration: 0.2s;
+  transition-property: background-color;
+  /*Анимация для цвета фона*/
+}
+.overlay__button:hover {
+  outline: 2px solid #FFFFFF;
+  background-color: #656565;
+}
+.overlay__button img {
+  display: inline-block;
+  vertical-align: middle;
+  padding-right: 10px;
+}
+.card:hover .overlay {
+  opacity: 1;
+}

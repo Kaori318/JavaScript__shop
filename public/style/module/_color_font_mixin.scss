@@ -1,0 +1,90 @@
+/*ЦВЕТ*/
+$black: #000000;
+$white: #FFFFFF;
+$light_pink: #F16D7F;
+$pink: #F26376;
+$snow_white: #FBFBFB;
+$light_gray: #B1B1B1;
+$grey: #656565;
+$grey2: #5E5E5E;
+$grey3: #4D4D4D;
+$dark_grey: #222222;
+
+/*ТЕКСТ*/
+@mixin t11($fw,$c) {
+font-size: 11px;
+line-height: 13px;
+font-weight: $fw;
+color: $c;
+}
+@mixin t13($fw,$c) {
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: $fw;
+  color: $c;
+}
+@mixin t14($fw,$c) {
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: $fw;
+  color: $c;
+}
+@mixin t16($fw,$c) {
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: $fw;
+  color: $c;
+}
+@mixin t18($fw,$c) {
+  font-size: 18px;    
+  line-height: 22px;
+  font-weight: $fw;
+  color: $c;
+}
+  @mixin t20($fw,$c) {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: $fw;
+  color: $c;
+}
+  @mixin t24($fw,$c) {
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: $fw;
+  color: $c;
+}
+@mixin text($f,$lh,$fw,$c){ /*Текст с другими параметрами*/
+font-size: $f;
+line-height: $lh;
+font-weight: $fw;
+color: $c;
+}
+
+/*КНОПКИ*/
+@mixin btn-w($p,$c) { /*Проздачная с рамкой*/
+  padding: $p;
+  outline: 1px solid $c;
+  border: none;
+  display: inline-block;
+}
+
+@mixin btn-p($p) {  /*Розовая кнопка без рамки*/
+  padding: $p;
+  background-color: $pink;
+  border: none;
+  display: inline-block;
+}
+
+/*КНОПКИ ПРИ НАВЕДЕНИИ И НАЖАТИИ*/
+@mixin btn-hover-pink(){   /*Розовый фон белый текст*/
+  background-color: $pink;
+  color: #F8F8F8;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.35);
+}
+$btn-active:  rgb(224, 50, 73);
+/*ЦЕНТРИРОВАНИЕ*/
+@mixin centr {  
+  display: flex;
+    justify-content: center;
+    align-items: center;
+}

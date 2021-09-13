@@ -1,0 +1,119 @@
+@import "color_font_mixin";
+
+.card-box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+
+    &__padding {
+        padding-bottom: 100px;
+    }
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+    background: #F8F8F8;
+    margin-bottom: 30px;
+    position: relative;
+    margin-right: 30px;
+
+    &:nth-child(3n) {
+        margin-right: 0;
+    }
+    @media (max-width: 1195px) {
+        margin-right: 16px;
+        margin-bottom: 16px;
+        &:nth-child(3n) {
+            margin-right: 16px;
+        }
+        &:nth-child(2n) {
+            margin-right: 0;
+        }
+    }
+    @media (max-width: 787px) {
+        margin-right: 16px;
+        margin-bottom: 16px;
+        &:nth-child(3n) {
+            margin-right: 16px;
+        }
+        &:nth-child(2n) {
+            margin-right: 0;
+        }
+    }
+    @media (max-width:767px) {
+        margin-right: 0;
+        &:nth-child(2n) {
+        margin-right: 0;
+        }
+        &:nth-child(3n) {
+        margin-right: 0px;
+        }
+    }
+
+    &__text {
+        padding: 0 16px;
+        text-align: left;
+        flex-grow: 1;
+
+        h4 {
+            @include t13(400, $black);
+            padding-top: 24px;
+            padding-bottom: 13px;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        p {
+            @include t14(400, $grey);
+            padding-bottom: 10px;
+        }
+
+        
+    }
+    strong {
+        padding: 0 16px 16px;
+text-align: left;
+        @include t16(400, $light_pink);
+    }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 420px;
+    background-color: rgba(58, 56, 56, 0.83);
+    @include centr;
+    opacity: 0;
+    transition: 0.5s;
+
+    &__button {
+        background-color: transparent;
+        @include btn-w(12px 14px, $white);
+        @include t14(400, $snow_white);
+        transition-duration: 0.2s;
+        transition-property: background-color;
+
+        /*Анимация для цвета фона*/
+        &:hover {
+            outline: 2px solid $white;
+            background-color: $grey;
+        }
+
+        img {
+            display: inline-block;
+            vertical-align: middle;
+            padding-right: 10px;
+        }
+    }
+
+    .card:hover & {
+        opacity: 1;
+    }
+}
