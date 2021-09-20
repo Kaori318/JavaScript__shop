@@ -37,17 +37,46 @@ Vue.component('cart', {
             }
         },
         remove(item){
-            this.$parent.getJson(`${API}/addToBasket.json`)
-                .then(data => {
-                    if (data.result === 1) {
-                        if(item.quantity>1){
+            let find = this.cartItems.find(el => el.id_product === item.id_product);
+            if (item.quantity > 1) {
+                this.$parent.putJson(`/api/cart/${find.id_product}`, {quantity: -1})
+                    .then(data => {
+                        if (data.result) {
                             item.quantity--;
-                        } else {
-                            this.cartItems.splice(this.cartItems.indexOf(item), 1);
                         }
-                    }
-                })    
+                    })
+            } else {
+                this.$parent.delJson(`/api/cart/${find.id_product}`, item)
+                    .then(data => {
+                        if (data.result) {
+                            this.cartItems.splice(this.cartItems.indexOf(item), 1);
+                        } else {
+                            console.log('error');
+                        }
+                    })
+            }
+    },
+   
+
+    deleteItem(item){
+      /*   let find = this.cartItems.find(el => el.id_product === item.id_product); */
+        this.$parent.delJson(`/api/cart/${item.id_product}`, item)
+        .then(data => {
+            if (data.result) {
+                this.cartItems.splice(this.cartItems.indexOf(item),1);
+            } else {
+                console.log('error');
+            }
+        })
     }
+    },
+    mounted() {
+        this.$parent.getJson(`/api/cart`)
+            .then(data => {
+                for (let el of data.contents) {
+                    this.cartItems.push(el)
+                }
+            });
     },
 
     template: `
@@ -59,20 +88,22 @@ Vue.component('cart', {
     
 
     <div class="cart-block" v-show="showCart">
-    <h2 v-if="cartItems.length===0">Корзина пуста</h2>
+    <h2 v-if="cartItems.length===0">Сart is empty</h2>
     <div v-else >
         <div class="cart-block__head">
-            <h3> Моя корзина ({{ this.cartItems.reduce((summ, item) => summ + item.quantity, 0) }})</h3>
-            <p class="btnInCart" @click="cartItems=[]">Очистить корзину</p>
+            <h3> My cart ({{ this.cartItems.reduce((summ, item) => summ + item.quantity, 0) }})</h3>
+            <p class="btnInCart" @click="cartItems=[]">Empty cart</p>
         </div>
         <hr>
         <cart-item v-for="(item,index) of cartItems" :key="item.id_product"  :cart-item="item" :cart-count = "cartCount"
-        :cart-summ = "cartSumm" @remove="remove" @add-product="addProduct">
+         @remove="remove" @add-product="addProduct"
+        @del = "deleteItem">
         </cart-item>
         <hr>
         <div class="cart-block__bottom">
-            <button>Оформить заказ</button>
-            <h2>Всего: {{ this.cartItems.reduce((summ, item) => summ + item.quantity*item.price, 0) }} $</h2>
+            <button>Cart</button>
+            <h2>
+            Total score {{ this.cartItems.reduce((summ, item) => summ + item.quantity*item.price, 0) }} $</h2>
         </div>
     </div>  
 </div>
@@ -96,7 +127,7 @@ Vue.component('cart-item', {
             <p>{{ cartItem.quantity }}</p>
             <p class="btnInCart" @click="$emit('add-product', cartItem)"> + </p>
         </div> 
-        <div class="del-btn btnInCart" @click="$emit('remove', cartItem)"> &times; </div>         
+        <div class="del-btn btnInCart" @click="$emit('del', cartItem)"> &times; </div>         
     </div>
     `
 })
