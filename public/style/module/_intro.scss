@@ -1,0 +1,49 @@
+@import "color_font_mixin";
+
+.intro {
+    background-color: #F1E4E6;
+    margin-bottom: 65px;
+    @media (max-width: 787px) {
+        @include centr;
+    }
+    &__wrap {
+        height: calc(100vh - 75px);
+        background: url(../img/top.png) no-repeat;
+        background-size: contain;
+        background-position: 16px bottom;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        @media (max-width: 1195px){ 
+            background-position: 100px bottom;
+        }
+        @media (max-width: 787px) {
+            @include centr;
+            min-height: 500px;
+            background: none;
+        }
+    }
+
+    &__text {
+        max-width: 450px;
+        border-left: 12px solid #F16D7F;
+        padding-left: 15px;
+        text-transform: uppercase;
+    }
+    &__text h1 {
+        @include text(30px, 38px, 700, $dark_grey);
+        padding-left: 16px;
+        @media (max-width: 1195px) {
+            padding-right: 0px;
+        }
+        @media (max-width: 787px) {
+            padding-right: 0px;
+            margin-left: 0%;
+        }
+    }
+
+    &__text .font-size-h1 {
+        @include text(48px, 58px, 900, $dark_grey);
+        display: block;
+    }
+}

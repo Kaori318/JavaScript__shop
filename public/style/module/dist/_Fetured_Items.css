@@ -1,0 +1,55 @@
+@charset "UTF-8";
+/*ЦВЕТ*/
+/*ТЕКСТ*/
+/*КНОПКИ*/
+/*КНОПКИ ПРИ НАВЕДЕНИИ И НАЖАТИИ*/
+/*ЦЕНТРИРОВАНИЕ*/
+.Fetured_Items {
+  margin-bottom: 48px;
+  margin-top: 96px;
+  text-align: center;
+}
+.Fetured_Items__header {
+  padding-bottom: 48px;
+}
+.Fetured_Items__header h2 {
+  /*Текст с другими параметрами*/
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 400;
+  color: #222222;
+  padding-bottom: 6px;
+}
+.Fetured_Items__header p {
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: 400;
+  color: #B1B1B1;
+}
+
+.Fetured_Items__button {
+  /*Проздачная с рамкой*/
+  padding: 14px 38px;
+  outline: 1px solid #F26376;
+  border: none;
+  display: inline-block;
+  text-align: center;
+  background-color: #FFFFFF;
+  transition-duration: 0.5s;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 400;
+  color: #F16D7F;
+}
+.Fetured_Items__button:hover {
+  background-color: #F26376;
+  color: #F8F8F8;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.35);
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 400;
+  color: #FFFFFF;
+}
+.Fetured_Items__button:active {
+  background-color: #e03249;
+}

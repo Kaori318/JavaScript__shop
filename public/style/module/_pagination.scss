@@ -1,0 +1,23 @@
+@import "color_font_mixin";
+
+.pagination__wrap {
+    display: flex;
+    justify-content: center;
+    border: 1px solid #EBEBEB;
+    padding: 20px;
+    width: 300px;
+}
+.pagination {
+    display: flex;
+    list-style: none;
+}
+.pagination__item a {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    color: #EBEBEB;
+    padding: 0 10px;
+}
+.pagination__item a:hover {
+    color: #F16D7F;
+}

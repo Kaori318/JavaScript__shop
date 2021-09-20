@@ -1,0 +1,158 @@
+@import "color_font_mixin";
+
+
+.cart {
+    padding-top: 96px;
+    padding-bottom: 128px;
+    display: flex;
+
+    &__card_box {
+        width: 652px;
+    }
+
+    &__card {
+        display: flex;
+        width: 650px;
+        box-shadow: 22px 22px 20px rgba(0, 0, 0, 0.15);
+
+        &:not(:last-child) {
+            margin-bottom: 40px;
+        }
+
+        a {
+            padding: 28px;
+            display: block;
+        }
+    }
+
+    &__img {
+        height: 306px;
+    }
+
+    &__text {
+        padding-top: 22px;
+        padding-left: 32px;
+
+        h2 {
+            @include t24(400, $dark_grey)
+        }
+    }
+
+    &__list {
+        list-style: none;
+        padding-top: 40px;
+    }
+
+    &__link {
+        @include text(22px,26px,400,$grey2);
+        padding-bottom: 6px;
+
+        input {
+            margin-left: 25px;
+            @include t18(400, $grey);
+            width: 44px;
+            border: 1px solid #EAEAEA;
+            height: 25px;
+            text-align: center;
+        }
+    }
+}
+
+.btn {
+    @include t14(300, $black);
+    border: 1px solid #A4A4A4;
+    padding: 17px 39px;
+    background-color: #fff;
+
+    &:hover {
+        background-color: #A4A4A4;
+        color: $white;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+    }
+
+    &-box {
+        margin-top: 72px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.cart__right {
+    margin-left: 128px;
+    width: 360px;
+    margin-top: 20px;
+
+    h3 {
+        @include t16(300, $black);
+    }
+}
+
+.shipping_adress__form {
+    margin-top: 20px;
+
+    button {
+        @include t11(300, $grey3);
+        padding: 9px 15px;
+        border: 1px solid #A4A4A4;
+        display: inline-block;
+        margin-top: 3px;
+
+        &:hover {
+            background-color: #A4A4A4;
+            color: $white;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+        }
+    }
+}
+
+.shipping__inp {
+    padding: 14px 17px;
+    @include t13(300, $light_gray);
+    border: 1px solid #A4A4A4;
+    margin-bottom: 21px;
+    width: 360px;
+}
+
+.sub_total {
+    margin-top: 57px;
+    text-align: right;
+    padding: 40px 43px;
+    background: #F5F3F3;
+
+    h3 {
+        @include t11 (400, $grey3);
+
+        span {
+            padding-left: 20px;
+        }
+    }
+
+    h2 {
+        @include t16 (300, $dark_grey);
+        padding-top: 12px;
+        padding-bottom: 21px;
+
+        span {
+            padding-left: 20px;
+            @include t16(700, $light_pink);
+        }
+    }
+
+    hr {
+        margin-bottom: 17px;
+        border-top: 1px solid #e2e2e2
+    }
+
+    button {
+        @include btn-p(15px 37px);
+        @include t16(200, $white);
+        cursor: pointer;
+
+        &:hover {
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.35);
+        }
+        &:active {
+          background-color: $btn-active;  
+        }
+    }
+}

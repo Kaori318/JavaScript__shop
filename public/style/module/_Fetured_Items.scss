@@ -1,0 +1,39 @@
+@import "color_font_mixin";
+
+.Fetured_Items {
+    margin-bottom: 48px;
+    margin-top: 96px;
+    text-align: center;
+
+    &__header {
+        padding-bottom: 48px;
+
+        h2 {
+            @include text(30px, 36px, 400, $dark_grey);
+            padding-bottom: 6px;
+        }
+
+        p {
+            @include t14(400, $light_gray);
+        }
+    }
+
+}
+.Fetured_Items__button {
+    @include btn-w(14px 38px, $pink);
+    text-align: center;
+    background-color: $white;
+    transition-duration: 0.5s;
+    @include t16(400, $light_pink);
+
+    &:hover {
+        background-color: $pink;
+        color: #F8F8F8;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.35);
+        @include t16(400, $white);
+    }
+
+    &:active {
+        background-color: $btn-active;
+    }
+}
